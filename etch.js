@@ -5,6 +5,7 @@ container.style.cssText = "border: 2px solid blue;display: flex; flex-wrap : wra
 function createDivs (){
     for(let i = 0; i < 256 ;i++){
         const box = document.createElement("div");
+        box.classList.add("hovering");
         boxes.push(box);
         console.log(boxes[i]);
         container.append(box);
