@@ -1,4 +1,9 @@
-#container{
+/* #container{
     width: 200px;
     height: 200px;
+} */
+
+body{
+    display: flex;
+    width: 100%;
 }
