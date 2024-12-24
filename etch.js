@@ -1,14 +1,30 @@
 
 
 let boxes = [];
+const btnContainer = document.querySelector("#btn-id");
 const container = document.querySelector("#container");
-const addBoxesBtn =document.createElement("button");
-addBoxesBtn.innerText = "Add Boxes";
-console.log(addBoxesBtn);
-container.style = "border: 2px solid blue;display: flex; flex-wrap : wrap; align-item: center; width: 95px; box-sizing: border-box";
+const boxesBtn =document.createElement("button");
+boxesBtn.innerText = "Add Boxes";
+btnContainer.append(boxesBtn);
+//console.log(boxesBtn);
+container.style = "border: 2px solid blue;display: flex; flex-wrap : wrap; align-item: center; width: 95px;height: 95px; box-sizing: border-box";
+
+boxesBtn.addEventListener("click",promptButton);
+let  totalNumOfBoxes = 16 ** 2 ;
+
+function promptButton (){
+    totalNumOfBoxes = 0;
+    console.log(totalNumOfBoxes);
+    numOfBoxes = prompt("How many boxes do you need on each side");
+    console.log(numOfBoxes);
+    totalNumOfBoxes = numOfBoxes ** 2;
+    console.log(totalNumOfBoxes);
+}
+
+//promptButton();
 
 function createDivs (){
-    for(let i = 0; i < 256 ;i++){
+    for(let i = 0; i < totalNumOfBoxes ;i++){
         const box = document.createElement("div");
         box.classList.add("hovering");
         boxes.push(box);
