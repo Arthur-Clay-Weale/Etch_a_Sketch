@@ -13,17 +13,19 @@ boxesBtn.addEventListener("click",promptButton);
 let  totalNumOfBoxes = 16 ** 2 ;
 
 function promptButton (){
+    container.innerHTML = "";
     totalNumOfBoxes = 0;
     console.log(totalNumOfBoxes);
     numOfBoxes = prompt("How many boxes do you need on each side");
     console.log(numOfBoxes);
     totalNumOfBoxes = numOfBoxes ** 2;
     console.log(totalNumOfBoxes);
+    createDivs(totalNumOfBoxes);
 }
 
 //promptButton();
 
-function createDivs (){
+function createDivs (totalNumOfBoxes){
     for(let i = 0; i < totalNumOfBoxes ;i++){
         const box = document.createElement("div");
         box.classList.add("hovering");
@@ -41,4 +43,4 @@ function createDivs (){
         }
 }
 
-createDivs(); 
+createDivs(totalNumOfBoxes); 
