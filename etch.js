@@ -7,7 +7,7 @@ const boxesBtn =document.createElement("button");
 boxesBtn.innerText = "Add Boxes";
 btnContainer.append(boxesBtn);
 //console.log(boxesBtn);
-container.style = "border: 2px solid blue;display: flex; flex-wrap : wrap; align-item: center; width: 95px;height: 95px; box-sizing: border-box";
+container.style = "border: 2px solid blue;display: flex; flex-wrap : wrap; align-item: center; width: 96px;height: 95px; box-sizing: border-box";
 
 boxesBtn.addEventListener("click",promptButton);
 let  totalNumOfBoxes = 16 ** 2 ;
@@ -21,6 +21,10 @@ function promptButton (){
     totalNumOfBoxes = numOfBoxes ** 2;
     console.log(totalNumOfBoxes);
     createDivs(totalNumOfBoxes);
+    let dimension = parseInt("6px",10);
+    let newDimension = (dimension * numOfBoxes);
+        console.log(newDimension);
+    container.style = `border: 2px solid blue;display: flex; flex-wrap : wrap; align-item: center; width: ${newDimension}px ;height: ${newDimension}px; box-sizing: border-box`;
 }
 
 //promptButton();
