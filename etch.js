@@ -7,7 +7,7 @@ const boxesBtn =document.createElement("button");
 boxesBtn.innerText = "Add Boxes";
 btnContainer.append(boxesBtn);
 //console.log(boxesBtn);
-container.style = "border: 2px solid blue;display: flex; flex-wrap : wrap; align-item: center; width: 96px;height: 95px; box-sizing: border-box";
+container.style = "border: 2px solid blue;display: flex; flex-wrap : wrap; align-item: center; width: 96px;height: 95px; box-sizing: border-box; justify-items: center";
 
 boxesBtn.addEventListener("click",promptButton);
 let  totalNumOfBoxes = 16 ** 2 ;
