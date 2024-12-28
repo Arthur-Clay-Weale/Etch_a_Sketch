@@ -12,6 +12,18 @@ container.style = "border: 2px solid blue;display: flex; flex-wrap : wrap; align
 boxesBtn.addEventListener("click",promptButton);
 let  totalNumOfBoxes = 16 ** 2 ;
 
+
+// function rgb () {
+//     let red = Math.floor(Math.random() * 256);
+//     let green = Math.floor(Math.random() * 256);
+//     let blue = Math.floor(Math.random() * 256);
+
+//     rgbColor = "rgb("+red+", "+green+", "+blue+")";
+//     console.log(rgb);
+// }
+
+// rgb();
+
 function promptButton (){
     container.innerHTML = "";
     totalNumOfBoxes = 0;
@@ -40,7 +52,11 @@ function createDivs (totalNumOfBoxes){
     }
         for(let eachbox of boxes){
             function changeBackgroundColor () {
-                eachbox.style.backgroundColor = "black";
+                let red = Math.floor(Math.random() * 256);
+                let green = Math.floor(Math.random() * 256);
+                let blue = Math.floor(Math.random() * 256);
+                    let rgbColor = `rgb(${red}, ${green}, ${blue})`;
+                eachbox.style.backgroundColor = `${rgbColor}`;
                 console.log(eachbox);
             }
             eachbox.addEventListener("mouseover", changeBackgroundColor)
