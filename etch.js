@@ -8,11 +8,11 @@ body.style = "display: flex; justify-content: center; width: 100%; height: 100%"
 const boxesBtn =document.createElement("button");
 boxesBtn.innerText = "Add Boxes";
 btnContainer.append(boxesBtn);
-//console.log(boxesBtn);
 container.style = "border: 2px solid blue;display: flex; flex-wrap : wrap; width: 400px;height: 400px; box-sizing: border-box; justify-content: center";
 
 boxesBtn.addEventListener("click",promptButton);
 let  totalNumOfBoxes = 16 ** 2 ;
+let defaultBoxSize = (400 / 16) - 2;
 
 function promptButton (){
     container.innerHTML = "";
@@ -22,23 +22,18 @@ function promptButton (){
     console.log(numOfBoxes);
     totalNumOfBoxes = numOfBoxes ** 2;
     console.log(totalNumOfBoxes);
-    createDivs(totalNumOfBoxes);
-    let dimension = parseInt("7px",10);
-    let newDimension = (dimension * numOfBoxes);
+    let newDimension = (400 / numOfBoxes) - 2;
         console.log(newDimension);
-    container.style = `border: 2px solid blue;display: flex; flex-wrap : wrap; align-item: center; width: ${newDimension}px ;height: ${newDimension}px; box-sizing: border-box`;
+        createDivs(totalNumOfBoxes, newDimension);
 }
 
-//promptButton();
-
-function createDivs (totalNumOfBoxes){
+function createDivs (totalNumOfBoxes,boxSize){
     for(let i = 0; i < totalNumOfBoxes ;i++){
         const box = document.createElement("div");
         box.classList.add("hovering");
         boxes.push(box);
-        //console.log(boxes[i]);
         container.append(box);
-        box.style.cssText = "border : 1px solid black; height : 23px; width : 23px; align-item: center";
+        box.style.cssText = `border : 1px solid black; height : ${boxSize}px; width : ${boxSize}px; align-item: center`;
     }
         for(let eachbox of boxes){
             function changeBackgroundColor () {
@@ -52,5 +47,4 @@ function createDivs (totalNumOfBoxes){
             eachbox.addEventListener("mouseover", changeBackgroundColor)
         }
 }
-
-createDivs(totalNumOfBoxes); 
+createDivs(totalNumOfBoxes,defaultBoxSize); 
